@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BAZAAR | PDEU</title>
+	<link rel="shortcut icon" href="https://static.wixstatic.com/media/f6865b_73c4d575c50e4dcab4b1f777eb008416~mv2.jpg/v1/crop/x_62,y_0,w_537,h_516/fill/w_55,h_49,al_c,q_80,usm_0.66_1.00_0.01/photo.webp">
+	<!-- Bootstrap CSS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- Google Fonts https://fonts.google.com/ -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Animate.css https://cdnjs.com/libraries/animate.css/
+		https://daneden.github.io/animate.css/ -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<!-- Lightbox Image Gallery https://cdnjs.com/libraries/lightbox2  https://lokeshdhakar.com/projects/lightbox2/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+	<!-- Owl Carousel https://cdnjs.com/libraries/OwlCarousel2
+		http://owlcarousel2.github.io/OwlCarousel2/ -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<!-- jQuery https://code.jquery.com/ -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+	<!-- Bootstrap JS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<style>
+		/*-- TURN OFF WAYPOINTS/ANIMATION --*
+ .animated, .os-animation {
+	-webkit-animation: none!important;
+	-moz-animation: none!important;
+	-o-animation: none!important;
+	animation: none!important;
+	opacity: 1!important;
+	-webkit-animation-delay: none !important;
+	-moz-animation-delay: none !important;
+	animation-delay: none !important;
+	}
+
+/*-- TURN OFF WAYPOINTS/ANIMATION ON MOBILE --*
+@media (max-width: 767px) {
+.animated, .os-animation {
+	-webkit-animation: none!important;
+	-moz-animation: none!important;
+	-o-animation: none!important;
+	animation: none!important;
+	opacity: 1!important;
+	-webkit-animation-delay: none !important;
+	-moz-animation-delay: none !important;
+	animation-delay: none !important;
+	}
+}
+
+
+/*============= IF BOOTSTRAP FIXED NAVBAR IS JUMPING ON SCROLL =============*
+.fixed-top  {
+	-webkit-backface-visibility: hidden;
+}
+
+
+/*============= WAYPOINTS (DON'T CHANGE CSS BELOW) =============*/
+.os-animation{
+	opacity: 0;
+	margin: 0!important;
+	max-width: 100%;
+}
+.os-animation.animated {
+	opacity: 1;
+}
+
+
+
+
+/*============= RESETS =============*/
+
+/*-- iPhone X Remove Gutters --*/
+html {
+   padding: env(safe-area-inset);
+}
+/*-- Prevent Horizontal Scrolling & Font Style --*/
+html, body {
+   overflow-x: hidden;
+   font-family: 'Lato', sans-serif;
+   color: #505962;
+}
+.text-nuno {
+   color: #1EBBA3;
+}
+
+/*--- Nav Scrolling Offset --*/
+.offset:before {
+   content: "";
+   height: 4rem;
+   display: block;
+   margin-top: -4rem;
+}
+
+/*--- Extra Bootstrap Column Padding --*/
+[class*="col-"] {
+   padding: 1rem;
+}
+
+/*============= NAVIGATION =============*/
+.navbar-brand img {
+   height: 2rem;
+}
+.navbar {
+   padding: .7rem 1rem;
+   text-transform: uppercase;
+   font-weight: 700;
+   letter-spacing: .1rem;
+   font-size: .9rem;
+   transition: background-color .5s ease;
+}
+.navbar-nav li {
+   padding-right: .8rem;
+}
+.navbar-nav .nav-link {
+   color: white;
+   padding-top: .8rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+   color: #1EBBA3;
+}
+.custom-toggler-icon {
+   color: white;
+   font-size: 1.6rem;
+}
+.navbar.solid,
+.navbar.solid-toggle {
+   background: rgba(0, 0, 0, .7)!important;
+   transition: background-color 1s ease;
+}
+
+/*-- Remove Button Outline --*/
+button:focus, a:focus, a.btn:focus {
+   outline: 0;
+   -webkit-appearance: none;
+   box-shadow: none;
+   transition: all .6s ease;
+}
+button, a, a.btn,
+.svg-inline--fa {
+   transition: all .6s ease;
+}
+
+/*============= LANDING PAGE =============*/
+
+/*--- Fixed Landing Page Section --*/
+.landing {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   display: table;
+   z-index: -1;
+}
+.home-wrap {
+   clip: rect(0, auto, auto, 0);
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+}
+.home-inner {
+	{% load static %}
+
+background-image: url("{% static 'bazaar/img/bazaar.png' %}");
+position: fixed;
+height: 100%;
+width: 100%;
+background-size: cover;
+background-position: center center;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+will-change: transform;
+display: table;
+}
+
+/*-- Landing Page Caption --*/
+.caption {
+z-index: 1;
+position: absolute;
+top: 38%;
+width: 100%;
+max-width: 100%;
+}
+.caption h1 {
+   font-size: 4.5rem;
+   letter-spacing: .3rem;
+   text-shadow: .1rem .1rem .8rem black;
+   padding-bottom: 1rem;
+}
+.caption h3 {
+   font-size: 2.5rem;
+   text-shadow: .1rem .1rem .5rem black;
+   padding-bottom: 2rem;
+}
+.caption .btn-lg {
+   border-width: medium;
+   padding: .8rem 1.5rem;
+   font-size: 1.1rem;
+}
+
+/*-- Bouncing Down Arrow --*/
+.arrow {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   animation: bounce 2s infinite;
+   -webkit-animation: bounce 2s infinite;
+}
+.down-arrow .svg-inline--fa {
+   color: white;
+   font-size: 2.2rem;
+   opacity: .3;
+}
+.down-arrow .svg-inline--fa:hover {
+   opacity: .8;
+}
+
+/*============= FEATURES SECTION =============*/
+
+.btn-sm {
+   border-width: medium;
+   border-radius: 0;
+   padding: .5rem 1.1rem;
+   text-transform: uppercase;
+   font-size: .9rem;
+   margin: 1rem;
+}
+.btn-nuno {
+   background-color: #1EBBA3;
+   color: white;
+}
+.btn-nuno:hover {
+   background-color: #189582;
+   color: white;
+}
+h3.heading {
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 1.9rem;
+   text-align: center;
+   margin-bottom: 1.9rem;
+}
+.heading-underline {
+   width: 3rem;
+   height: .2rem;
+   background-color: #1EBBA3;
+   margin: 0 auto 2rem;
+}
+.feature span {
+   color: #1EBBA3;
+   margin-bottom: .6rem;
+}
+.feature h3 {
+   text-transform: uppercase;
+   font-size: 1.3rem;
+   padding-bottom: .4rem;
+}
+
+/*===== FIXED BACKGROUND IMG DARK =====*/
+
+/*--- iOS Fixed Background Image --*/
+.fixed {
+   position: relative;
+   width: 100%;
+   
+}
+.fixed-wrap {
+   clip: rect(0, auto, auto, 0);
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: -9999;
+   
+   
+}
+.fixed-dark {
+   background-image: url('https://www.gurutrade.com/files/filemanager/image/For_Analytics_13/forex_animals.jpg');
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   background-size: cover;
+   background-position: center center;
+   -webkit-transform: translateZ(0);
+   transform: translateZ(0);
+   will-change: transform;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   display: table;
+}
+.dark {
+   background-color: rgba(0, 0, 0, .7);
+   padding: 7rem 0;
+   z-index: 1000;
+}
+
+/*============= PORTFOLIO SECTION =============*/
+
+.portfolio-item img:hover {
+   transform: scale(1.3);
+   cursor: zoom-in;
+}
+.portfolio-item img {
+   transition: transform .4s ease;
+}
+
+/*============= PRICING SECTION =============*/
+
+.pricing-column {
+   background-color: white;
+   height: 100%;
+   padding: 1.6rem;
+   border-top: .25rem solid #1EBBA3;
+   box-shadow: 0 0 .8rem rgba(0, 0, 0, .075);
+   transition: transform .7s ease;
+   position: relative;
+   overflow: hidden;
+}
+.pricing-column:hover {
+   transform: scale(1.1);
+}
+.pricing-column h4 {
+   font-size: 1.1rem;
+   font-weight: 700;
+}
+.ribbon {
+   background-color: #6c757d;
+   color: white;
+   font-size: .8rem;
+   font-weight: 700;
+   height: 2rem;
+   width: 10rem;
+   padding-top: .4rem;
+   position: absolute;
+   transform: rotate(45deg);
+   right: -2.8rem;
+   top: 1.5rem;
+   box-shadow: 0 0 .2rem rgba(0, 0, 0, .25);
+}
+
+/*============= TEAM SECTION FIXED BG IMG LIGHT =============*/
+
+/*--- Team Light Background Image --*/
+.fixed-light {
+   background-image: url('{% static "bazaar/img/fixed/bnblogo.jpg"%}');
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   background-size: cover;
+   background-position: center center;
+   -webkit-transform: translateZ(0);
+   transform: translateZ(0);
+   will-change: transform;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   display: table;
+}
+.light {
+   background-color: rgba(255, 255, 255, .75);
+   padding: 5rem 0;
+   z-index: 1000;
+}
+.owl-stage {
+   display: flex;
+}
+.card {
+   height: 100%;
+   border-radius: 0;
+   text-align: center;
+   margin: 0 1rem;
+   border: .1rem solid rgba(0, 0, 0, .075);
+   box-shadow: 0 0 .8rem rgba(0, 0, 0, .075);
+   transition: transform .2s ease;
+}
+.card:hover {
+   transform: scale(.95);
+}
+button.owl-dot.active span,
+button.owl-dot:hover span {
+   background: #1EBBA3!important;
+}
+ul.social {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   font-size: 1.5rem;
+}
+ul.social li {
+   display: inline;
+   padding-right: .8rem;
+}
+ul.social li a {
+   color: #1EBBA3;
+   transition: all .2s ease;
+}
+ul.social li a:hover {
+   color: #505962;
+}
+
+/*============= SKILLS SECTION =============*/
+
+
+/*============= CONTACT SECTION =============*/
+
+.footer {
+   background: url('https://scontent.famd1-2.fna.fbcdn.net/v/t1.0-9/s960x960/107769570_142109084207535_913565402710944602_o.jpg?_nc_cat=107&_nc_sid=8024bb&_nc_ohc=DkiVIkhy3MUAX-YqAOX&_nc_ht=scontent.famd1-2.fna&_nc_tp=7&oh=aa9c5430955191b17596b3ea44857b78&oe=5F2B5D7D') no-repeat;
+   background-size: cover;
+   color: white;
+   /* background-color: #505962; */
+}
+.row.outer {
+   background-color: rgba(57, 63, 70, .85);
+   padding: 1rem 2rem 3rem;
+}
+.footer img {
+   height: 2rem;
+   margin: 1.5rem 0;
+}
+.footer a,
+.footer ul.social li a {
+   color: white;
+}
+.footer ul.social li a:hover {
+   color: #1EBBA3;
+}
+.footer h3 {
+   text-transform: uppercase;
+   margin: 1.5rem 0;
+}
+
+/*--- Contact Form --*/
+.form-group {
+   margin-bottom: 1.3rem;
+}
+.form-control {
+   background-color: #53595f;
+   border-radius: 0;
+   border: .15rem solid #666b71;
+   color: white!important;
+   font-size: 1.1rem;
+}
+.form-control:focus {
+   background-color: #53595f;
+   border: .15rem solid #666b71;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+   color: #b2b5b8!important;
+}
+hr.socket {
+   border-top: .2rem solid #666b71;
+   width: 100%;
+}
+
+/*============= TOP SCROLL =============*/
+
+a.top-scroll {
+   right: 1.2rem;
+   bottom: 1.2rem;
+   position: fixed;
+   opacity: .3;
+   z-index: 1000;
+   display: none;
+}
+a.top-scroll:hover {
+   opacity: .5;
+}
+.top-scroll .svg-inline--fa {
+   background: white;
+   color: #53595f;
+   font-size: 3rem;
+   height: 1.7rem;
+}
+
+/*============= MEDIA QUERIES =============*/
+
+/* Devices under 992px (lg) */
+@media (max-width: 991.98px) {
+   .caption h1 {
+      font-size: 3.5rem;
+      letter-spacing: .2rem;
+      padding-bottom: .8rem;
+   }
+   .caption h3 {
+      font-size: 2.2rem;
+      padding-bottom: 1.7rem;
+   }
+   .caption .btn-lg {
+      padding: .7rem 1.2rem;
+      font-size: 1rem;
+   }
+   .clients img {
+      max-width: 50%;
+      margin: 0 auto;
+   }
+}
+
+/* Devices under 768px (md) */
+@media (max-width: 767.98px) {
+   .caption h1 {
+      font-size: 2.7rem;
+      letter-spacing: .15rem;
+      padding-bottom: .5rem;
+   }
+   .caption h3 {
+      font-size: 1.7rem;
+      padding-bottom: 1.2rem;
+   }
+   .caption .btn-lg {
+      padding: .6rem 1.1rem;
+   }
+   #features h1 {
+      font-size: 2rem;
+   }
+   .fixed-dark {
+      background-image: url('https://www.gurutrade.com/files/filemanager/image/For_Analytics_13/forex_animals.jpg')
+   }
+   .fixed-light {
+      background-image: url('https://scontent.famd1-1.fna.fbcdn.net/v/t1.0-9/s960x960/107695163_142108124207631_6419666399039283034_o.jpg?_nc_cat=109&_nc_sid=8024bb&_nc_ohc=pl8lF5sF_zgAX_qJPh2&_nc_ht=scontent.famd1-1.fna&_nc_tp=7&oh=fa1cdee1f76e5c8274663da4678b5520&oe=5F2CA8EF')
+   }
+   .footer {
+      background: url('https://scontent.famd1-2.fna.fbcdn.net/v/t1.0-9/s960x960/107769570_142109084207535_913565402710944602_o.jpg?_nc_cat=107&_nc_sid=8024bb&_nc_ohc=DkiVIkhy3MUAX-YqAOX&_nc_ht=scontent.famd1-2.fna&_nc_tp=7&oh=aa9c5430955191b17596b3ea44857b78&oe=5F2B5D7D') no-repeat;
+   }
+   .top-scroll {
+      display: none!important;
+   }
+}
+
+/* Devices under 576px (sm) */
+@media (max-width: 575.98px) {
+   .caption h1 {
+      font-size: 1.9rem;
+      letter-spacing: .1rem;
+      padding-bottom: .4rem;
+   }
+   .caption h3 {
+      font-size: 1.2rem;
+      padding-bottom: 1rem;
+   }
+   .caption .btn-lg {
+      padding: .4rem .9rem;
+      font-size: .9rem;
+   }
+}
+
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+=============*/
+
+	@media (max-width: 800px){
+		#team{
+			display: none;
+		}
+
+		#removeli{
+			display: none;
+		}
+	}
+
+	.loading__img{
+        height: 30%;
+        border-radius: 100px;
+        
+        }
+
+        #loading{
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #191919 ;
+            
+        }
+        
+
+	</style>
+
+
+</head>
+
+<body data-spy="scroll" data-target="#navbarResponsive" >
+
+
+	<div id="loading">
+		<img src='{% static "bazaar/img/donaldduckmoney.gif" %}' class="loading__img" alt="">
+	</div>
+
+	<script>
+		var preLoader = document.querySelector("#loading");
+		var preLoader = document.getElementById("loading");
+			setTimeout(() => {
+				preLoader.style.display = "none";
+			}, 3500)
+			preLoader.style.display = "flex";
+	</script>
+	<!-- Start Home Section -->
+	<div id="home">
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg fixed-top">
+			<div class="container-fluid">
+				<a href="#home" class="navbar-brand"><img src="https://scontent.famd1-2.fna.fbcdn.net/v/t1.0-9/104544200_114264373658673_5182411418962563499_n.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=x72cVFRlEhIAX-QUb2c&_nc_ht=scontent.famd1-2.fna&oh=1c2eb6f59cc6ea98aee9921ec32084ae&oe=5F2CEFA9" alt=""></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a href="#home" class="nav-link">Home</a>
+						</li>
+						<li class="nav-item">
+							<a href="#about" class="nav-link">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a href="#portfolio" class="nav-link">Portfolio</a>
+						</li>
+						<li class="nav-item">
+							<a href="#tutorial" class="nav-link">Tutorial</a>
+						</li>
+						<li class="nav-item" id="removeli">
+							<a href="#team" class="nav-link">Contact us</a>
+						</li>
+						<li class="nav-item">
+							<a href="/bazaar/loginsignup" class="nav-link">Login / SignUp</a>
+						</li>
+						
+						
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+		<!-- End Navigation -->
+
+		<!-- Start Landing Page Image -->
+		<div class="landing">
+			<div class="home-wrap">
+				<div class="home-inner"></div>
+			</div>
+		</div>
+		<!-- End Landing Page Image -->
+
+		<!-- Start Landing Page Caption -->
+		<div class="caption text-center text-light text-uppercase">
+
+			<h1 class="font-weight-bold os-animation" data-animation="fadeInUp" data-delay=".6s">BAZA<span class="text-nuno">AR</span></h1>
+			<h3 class="os-animation" data-animation="fadeInUp" data-delay=".8s">The Stock market Simulation</h3>
+			<a href="#about" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp" data-delay="1s">Get Started</a>
+
+		</div>
+		<!-- End Landing Page Caption -->
+
+		<!-- Start Bouncing Down Arrow -->
+		<a href="#about" class="down-arrow text-center">
+			<div class="arrow d-none d-md-block">
+				<i class="fas fa-angle-down"></i>
+			</div>
+		</a>
+		<!-- End Bouncing Down Arrow -->
+
+	</div>
+	<!-- End Home Section -->
+
+
+	<!-- Start Features Section -->
+	<div id="about" class="offset">
+
+		<!-- Start Theme Heading -->
+		<div class="row text-center pt-3 os-animation justify-content-center" data-animation="fadeInUp">
+			<div class="col-11 col-md-10 col-lg-9">
+				<h1>ABOUT US</h1>
+				<div class="heading-underline"></div>
+				
+			</div>
+		</div>
+		<!-- End Theme Heading -->
+
+		<!-- Start Jumbotron -->
+		<div class="jumbotron m-0 ">
+
+			
+
+			<div class="container">
+				<div class="row text-left px-lg-4 px-xl-5 lead">
+					The Finance Club at PDPU aims to bring together all students who share an interest and passion for finance and investments and share their knowledge and insights with each other. It aims at enabling them to discover recent trends and development in the field while allowing each individual to grow personally. We aim to provide the students with a hands on experience by organizing developmental opportunities through guest speakers, panel discussions, mock stock market simulation and many more such events in the field of finance. <br><br> The purpose of finance club is to promote interest and impart their knowledge in the field of finance. <br>
+To become a space of learning in the field of finance and investment that creates successful professionals.<br>
+Foster an environment among student to encourage continuous learning and discovery of recent trends in finance.<br> 
+Help members develop practical investment skills and test them in the markets; and to create superior access to career opportunities in the investment industry.
+
+ 
+
+
+					
+				</div> <!-- End Row -->
+			</div> <!-- End Container-->
+
+		</div> <!-- End Jumbotron -->
+
+		<!-- Start Fixed BG IMG Dark -->
+		<div class="fixed">
+
+			<div class="row dark text-light text-center">
+				<div class="container my-5"></div>
+				<div class="col-12 os-animation" data-animation="fadeInUp">
+					<h4 class="heading ">Newbie to the stock markets ?</h4>
+					<div class="heading-underline"></div>
+					<div class="container my-5"></div>
+					<div class="container my-5"></div>
+					<h4 class="heading lead">Dont worry. We've got a tutorial for you  :)</h4>
+				</div>
+				<div class="container my-5"></div>
+
+				
+			</div> <!-- End Row Dark -->
+
+			<div class="fixed-wrap">
+				<div class="fixed-dark"></div>
+			</div>
+		</div>
+		<!-- End Fixed BG IMG Dark -->
+
+	</div>
+	<!-- End of Features Section -->
+
+
+	<!-- Start Portfolio Section -->
+	<div id="portfolio" class="offset">
+
+		<div class="container-fluid px-0">
+			<div class="row justify-content-center py-5">
+
+				<div class="col-12 mt-5 os-animation" data-animation="fadeInUp">
+					<h3 class="heading">Portfolio</h3>
+					<div class="heading-underline"></div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+
+
+						<a href='{% static "bazaar/img/portfolio/1.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+
+
+							<img src='{% static "bazaar/img/portfolio/1.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/2.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/2.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/3.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/3.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/4.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/4.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/5.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/5.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/6.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/6.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/7.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/7.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href='{% static "bazaar/img/portfolio/8.jpg" %}' data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src='{% static "bazaar/img/portfolio/8.jpg" %}' alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				
+			</div> <!-- End Row -->
+		</div> <!-- End Container -->
+
+	</div>
+	<!-- End of Portfolio Section -->
+
+
+	<!-- Start Pricing Section -->
+	<div id="tutorial" class="offset">
+	
+		<div class="jumbotron mb-0">
+			<div class="container py-2">
+	
+				<div class="os-animation text-center" data-animation="fadeInUp">
+					<h3 class="heading">Tutorial</h3>
+					
+					<div class="heading-underline"></div>
+					<p>Watch on youtube for better experience :)</p>
+				</div>
+	
+				<div class="row justify-content-center text-center px-lg-4 px-xl-5">
+	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/vGHrJDmepI0" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe></div>
+	
+			</div> <!-- End Row -->
+	
+		</div> <!-- End Container -->
+	</div> <!-- End Jumbotron-->
+	
+	</div>
+	<!-- End of Pricing Section -->
+
+
+	<!-- Start Team Section -->
+	<div id="team" class="offset">
+
+		<!-- Start Fixed BG IMG Light -->
+		<div class="fixed">
+
+			<div class="row light">
+
+				<div class="col-12 os-animation text-center data-animation="fadeInUp">
+					<h3 class="heading">Contact Us</h3>
+					
+					<div class="heading-underline"></div>
+					
+					
+				</div>
+
+				<div class="container">
+					<div class="os-animation" data-animation="fadeInUp">
+						<div id="team-carousel" class="owl-carousel owl-theme">
+
+							<div class="card">
+								<img src='{% static "bazaar/img/team/team6.jpeg" %}' alt="" class="card-img-top rounded-0">
+								<div class="card-body">
+									<h4 class="font-weight-bold">Saumya Shah</h4>
+									<h5 class="text-nuno">Technical Head</h5>
+									<p class="border-top border-bottom py-3 my-3">IBM Certified Data Scientist <br>Django-Stack Developer</p>
+									<ul class="social">
+										<li><a href="mailto: shahsaumya001@gmail.com"><i class="far fa-envelope"></i></a></li>
+										<li><a href="https://www.instagram.com/sns5154/"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="https://www.linkedin.com/in/saumya-shah-4122931a6/"><i class="fab fa-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div> <!-- End Card -->
+
+							<div class="card">
+								<img src='{% static "bazaar/img/team/team2.jpeg" %}' alt="" class="card-img-top rounded-0">
+								<div class="card-body">
+									<h4 class="font-weight-bold">Muskaan Shah</h4>
+									<h5 class="text-nuno">President</h5>
+									<p class="border-top border-bottom py-3 my-3">ABC <br> DEF</p>
+									<ul class="social">
+										<li><a href="#"><i class="far fa-envelope"></i></a></li>
+										<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div> <!-- End Card -->
+
+							
+							<div class="card">
+								<img src='{% static "bazaar/img/team/team3.jpeg" %}' alt="" class="card-img-top rounded-0">
+								<div class="card-body">
+									<h4 class="font-weight-bold">Roshni Lakhani</h4>
+									<h5 class="text-nuno">Vice-President</h5>
+									<p class="border-top border-bottom py-3 my-3">ABC <br> DEF</p>
+									<ul class="social">
+										<li><a href="#"><i class="far fa-envelope"></i></a></li>
+										<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div> <!-- End Card -->
+
+						</div> <!-- End Team Carousel -->
+					</div> <!-- End Animation -->
+				</div><!-- End Container -->
+
+			</div> <!-- End Row -->
+
+			<div class="fixed-wrap">
+				<div class="fixed-light"></div>
+			</div>
+		</div>
+		<!-- End Fixed BG IMG Light -->
+
+	</div>
+	<!-- End Team Section -->
+
+
+
+
+	<!-- Start Contact Section -->
+	<div id="contact" class="offset">
+
+		<div class="container-fluid footer px-0">
+			<div class="row outer">
+				<div class="container">
+					<div class="row py-3">
+						<div class="col-md-5 px-0 pr-md-3">
+							<img src="https://scontent.famd1-2.fna.fbcdn.net/v/t1.0-9/104544200_114264373658673_5182411418962563499_n.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=x72cVFRlEhIAX-QUb2c&_nc_ht=scontent.famd1-2.fna&oh=1c2eb6f59cc6ea98aee9921ec32084ae&oe=5F2CEFA9" alt="">
+							
+
+							<p>At our core is a collection of design and development solutions that represent everything your business needs to compete in the modern marketplace.</p>
+							<p>Website developed and maintained by :</p>
+							<p>Saumya Shah <br>7405820265</p>
+							
+							<strong>Contact Info [BNB]</strong>
+							<p></p>
+							<ul class="social pt-3">
+								
+								<li><a href="mailto: pdpubnb@gmail.com"><i class="far fa-envelope"></i></a></li>
+								<li><a href="https://www.instagram.com/bullsandbears_pdeu/"><i class="fab fa-instagram"></i></a></li>
+								<li><a href=""><i class="fab fa-youtube-square"></i></a></li>
+								<li><a href="https://www.linkedin.com/company/bulls-and-bearspdeu/mycompany/"><i class="fab fa-linkedin"></i></a></li>
+							</ul>
+						</div> <!-- End Column -->
+
+						<div class="col-md-7 px-0 pl-md-3 border-dark border-5">
+							<h3>Geo-location</h3>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.4187915137913!2d72.66360111497015!3d23.15491043488617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e802cfe647e33%3A0x983a11b5cb484f15!2sPandit%20Deendayal%20Petroleum%20University!5e0!3m2!1sen!2sin!4v1594286796527!5m2!1sen!2sin"
+								width="340" height="340" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+								tabindex="0"></iframe>
+						</div> <!-- End Row -->
+
+					</div> <!-- End Row -->
+				</div> <!-- End Container -->
+
+				<hr class="socket">
+				
+
+			</div> <!-- End Row Outer -->
+		</div> <!-- End Container Fluid -->
+		
+	</div>
+	<!-- End Contact Section -->
+
+
+	<!-- Top Scroll -->
+	<a href="#home" class="top-scroll">
+		<i class="fa fa-angle-up"></i>
+	</a>
+	<!-- End of Top Scroll -->
+
+
+	<!-- Script Source Files -->
+	<script>
+
+		/*========== NAVBAR TRANSPARENT TO SOLID ==========*/
+			$(document).ready(function () { //when document(DOM) loads completely
+				checkScroll(); //check if page is scrolled
+				$(window).scroll(checkScroll); //get scroll position of window
+			});
+
+			function checkScroll() { //check if page is scrolled
+				if ($(window).scrollTop() >= 300) { //if window is scrolled 300px or more
+					$('.navbar').addClass('solid'); //add class 'solid' to element with class 'navbar'
+				} else { //if page is not scrolled 300px from top
+					$('.navbar').removeClass('solid'); //remove class 'solid' from navbar element
+				}
+			}
+
+
+			/*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
+			$('.navbar-toggler').click(function () { //when navbar-toggler is clicked
+				if ($(window).scrollTop() <= 300) { //if window scrolled 300px or less from top
+					$("nav.navbar").toggleClass("solid-toggle"); //add the solid class to navbar
+				}
+			});
+
+
+			/*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK a[href^="#"] ==========*/
+			$(document).on('click', 'a[href^="#"]', function (event) {
+				event.preventDefault();
+				$('.navbar-toggler').addClass('collapsed');
+				$('#navbarResponsive').removeClass('show');
+
+				setTimeout(function () {
+					$('nav.navbar').removeClass('solid-toggle');
+				}, 300);
+
+				$('html, body').animate({
+					scrollTop: $($.attr(this, 'href')).offset().top
+				}, 1000);
+			});
+
+			/*========== BOUNCING DOWN ARROW ==========*/
+			$(document).ready(function () {
+				$(window).scroll(function () {
+					$('.arrow').css('opacity', 1 - $(window).scrollTop() / 250);
+				});
+			});
+
+
+			/*========== LIGHTBOX IMAGE GALLERY ==========*/
+			$(document).ready(function () {
+				lightbox.option({
+					'resizeDuration': 600,
+					'wrapAround': true,
+					'imageFadeDuration': 500
+				});
+			});
+
+
+			/*========== MEET THE TEAM CAROUSEL ==========*/
+			$(document).ready(function () { //when document(DOM) loads completely
+				$('#team-carousel').owlCarousel({ //owlCarousel settings
+					autoplay: false, //set to false to turn off autoplay and only use nav
+					autoplayHoverPause: false, //set to false to prevent pausing on hover
+					loop: false, //set to false to stop carousel after all slides shown
+					autoplayTimeout: 0, //time between transitions
+					smartSpeed: 10000, //transition speed
+					dotsSpeed: 10000, //transition speed when using dots/buttons
+					responsive: { //set number of items shown per screen width
+						0: {
+							items: 1 //0px width and up display 1 item
+						},
+						768: {
+							items: 2 //768px width and up display 2 items
+						},
+						992: {
+							items: 3 //992px width and up display 3 items
+						}
+					}
+				});
+			});
+
+
+			/*========== SKILLS COUNTER ==========*/
+			$(document).ready(function () {
+				$('.counter').counterUp({
+					delay: 10,
+					time: 3000,
+					beginAt: 0
+				});
+			});
+
+
+			/*========== CLIENTS CAROUSEL ==========*/
+			$(document).ready(function () { //when document(DOM) loads completely
+				$('#clients-carousel').owlCarousel({ //owlCarousel settings
+					autoplay: true, //set to false to turn off autoplay and only use nav
+					autoplayHoverPause: true, //set to false to prevent pausing on hover
+					loop: true, //set to false to stop carousel after all slides shown
+					autoplayTimeout: 8000, //time between transitions
+					smartSpeed: 1600, //transition speed
+					dotsSpeed: 1000, //transition speed when using dots/buttons
+					responsive: { //set number of items shown per screen width
+						0: {
+							items: 1 //0px width and up display 1 item
+						},
+						768: {
+							items: 2 //768px width and up display 2 items
+						}
+					}
+				});
+			});
+
+			/*========== TOP SCROLL BUTTON ==========*/
+			$(document).ready(function () {
+				$(window).scroll(function () {
+					if ($(this).scrollTop() > 500) {
+						$('.top-scroll').fadeIn();
+					} else {
+						$('.top-scroll').fadeOut();
+					}
+				});
+			});
+
+
+			/*========== MAKE ALL ANIMATION "FADEINUP" ON MOBILE ==========*/
+			$(document).ready(function () {
+				if ($(window).width() < 768) {
+					$('div').attr('data-animation', 'fadeInUp');
+				}
+			});
+
+
+
+			/*========== WAYPOINTS ANIMATION DELAY ==========*/
+			//Original Resource: https://www.oxygenna.com/tutorials/scroll-animations-using-waypoints-js-animate-css
+			$(function () { // a self calling function
+				function onScrollInit(items, trigger) { // a custom made function
+					items.each(function () { //for every element in items run function
+						var osElement = $(this), //set osElement to the current
+							osAnimationClass = osElement.attr('data-animation'), //get value of attribute data-animation type
+							osAnimationDelay = osElement.attr('data-delay'); //get value of attribute data-delay time
+
+						osElement.css({ //change css of element
+							'-webkit-animation-delay': osAnimationDelay, //for safari browsers
+							'-moz-animation-delay': osAnimationDelay, //for mozilla browsers
+							'animation-delay': osAnimationDelay //normal
+						});
+
+						var osTrigger = (trigger) ? trigger : osElement; //if trigger is present, set it to osTrigger. Else set osElement to osTrigger
+
+						osTrigger.waypoint(function () { //scroll upwards and downwards
+							osElement.addClass('animated').addClass(osAnimationClass); //add animated and the data-animation class to the element.
+						}, {
+							triggerOnce: true, //only once this animation should happen
+							offset: '70%' // animation should happen when the element is 70% below from the top of the browser window
+						});
+					});
+				}
+
+				onScrollInit($('.os-animation')); //function call with only items
+				onScrollInit($('.staggered-animation'), $('.staggered-animation-container')); //function call with items and trigger
+			});
+
+
+			/*========== CONTACT FORM INPUT VALIDATION ==========*/
+			//Original Resource: https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form
+			$(function () {
+
+				// init the validator
+				// validator files are included in the download package
+				// otherwise download from http://1000hz.github.io/bootstrap-validator
+
+				$('#contact-form').validator();
+
+
+				// when the form is submitted
+				$('#contact-form').on('submit', function (e) {
+
+					// if the validator does not prevent form submit
+					if (!e.isDefaultPrevented()) {
+						var url = "contact/contact.php";
+
+						// POST values in the background the the script URL
+						$.ajax({
+							type: "POST",
+							url: url,
+							data: $(this).serialize(),
+							success: function (data) {
+								// data = JSON object that contact.php returns
+
+								// we recieve the type of the message: success x danger and apply it to the
+								var messageAlert = 'alert-' + data.type;
+								var messageText = data.message;
+
+								// let's compose Bootstrap alert box HTML
+								var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+
+								// If we have messageAlert and messageText
+								if (messageAlert && messageText) {
+									// inject the alert to .messages div in our form
+									$('#contact-form').find('.messages').html(alertBox);
+									// empty the form
+									$('#contact-form')[0].reset();
+								}
+							}
+						});
+						return false;
+					}
+				})
+			});
+
+	</script>
+
+
+
+
+	<!-- Waypoints https://cdnjs.com/libraries/waypoints
+		https://github.com/imakewebthings/waypoints -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<!-- Font Awesome https://fontawesome.com/  https://use.fontawesome.com/releases/v5.13.0/js/all.js -->
+	<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+	<!-- Lightbox Image Gallery https://cdnjs.com/libraries/lightbox2  https://lokeshdhakar.com/projects/lightbox2/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+	<!-- Owl Carousel https://cdnjs.com/libraries/OwlCarousel2
+		http://owlcarousel2.github.io/OwlCarousel2/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<!-- jQuery CounterUp https://www.jsdelivr.com/package/npm/jquery.counterup
+		https://github.com/bfintal/Counter-Up2 -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+	<!-- Bootstrap Form Validator https://cdnjs.com/libraries/1000hz-bootstrap-validator -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+	
+	<!-- End of Script Source Files -->
+
+</body>
+</html> 

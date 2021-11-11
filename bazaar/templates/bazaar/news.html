@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAZAAR | NEWS </title>
+    <link rel="shortcut icon" href="https://static.wixstatic.com/media/f6865b_73c4d575c50e4dcab4b1f777eb008416~mv2.jpg/v1/crop/x_62,y_0,w_537,h_516/fill/w_55,h_49,al_c,q_80,usm_0.66_1.00_0.01/photo.webp">
+    {%load static%}
+    <link rel="stylesheet" href='{%static "bazaar/css/buy.css" %}'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+        .loading__img {
+            height: 30%;
+            border-radius: 100px;
+    
+        }
+    
+        #loading {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #191919;
+    
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="loading">
+        <img src='{%static "bazaar/img/donaldduckmoney.gif" %}' class="loading__img" alt="">
+    </div>
+    
+    <script>
+        var preLoader = document.getElementById("loading");
+        setTimeout(() => {
+            preLoader.style.display = "none";
+        }, 3500)
+        preLoader.style.display = "flex";
+    </script>
+    <nav id="nav">
+        <div class="back-circle back-circle-1"></div>
+
+
+        <ul>
+            <li class="link link-1"><a href="/bazaar/profile"><span>&nbsp; PROFILE &nbsp;&nbsp;</span></a></li>
+            <li class="link link-2"><a href="/bazaar/buy"><span>&nbsp; BUY &nbsp;&nbsp;</span></a></li>
+            <li class="link link-4"><a href="/bazaar/logoutuser/"><span>logout</span></a></li>
+            <li class="link link-3"><a href="/bazaar/sell"><span>sell</span></a></li>
+
+        </ul>
+        <div class="back-circle back-circle-2"></div>
+        <div class="back-circle back-circle-3"></div>
+        <div class="nav-btn" id="nav-btn">
+            <div class="nav-bars">
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div class="wrapper">
+        <header>
+            <h2 class="heading">News update</h2>
+        </header>
+
+        <main>
+            <section class="username__wrapper ">
+                <button class="username" onclick="window.open('/bazaar/profile')">
+                    <div class="username__flashy"></div>
+                    <span class="username__span">{{request.user}}</span>
+                </button>
+            </section>
+
+            <section class="form__wrapper">
+                <h2 id="timeStamp">
+
+                </h2>
+                <p class="lead py-2 px-3 font-weight-light" style="color: rgba(0,0,0,.70);" id="news">
+
+                </p>
+                
+                
+
+                
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let x=document.getElementById("timeStamp");
+        let y=document.getElementById("news");
+        setInterval(() => {
+                    axios.get('/bazaar/letsupdatetime')
+        .then(res => {
+            x.innerText=res.data;
+        });
+
+        axios.get('/bazaar/letsupdatetext')
+        .then(res => {
+            y.innerText=res.data;
+        });
+        },2000);
+
+    </script>
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src='{%static "bazaar/js/nav.js" %}'></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

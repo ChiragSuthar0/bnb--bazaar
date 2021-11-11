@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAZAAR | BUY STOCKS</title>
+    <link rel="shortcut icon" href="https://static.wixstatic.com/media/f6865b_73c4d575c50e4dcab4b1f777eb008416~mv2.jpg/v1/crop/x_62,y_0,w_537,h_516/fill/w_55,h_49,al_c,q_80,usm_0.66_1.00_0.01/photo.webp">
+    {% load static %}
+    <link rel="stylesheet" href='{% static "bazaar/css/buy.css" %}'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>    
+        .loading__img{
+        height: 30%;
+        border-radius: 100px;
+        
+        }
+
+        #loading{
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #191919 ;
+            
+        }
+        
+    
+    </style>
+
+    </head>
+<body >
+    <div id="loading">
+        <img src='{% static "bazaar/img/donaldduckmoney.gif" %}' class="loading__img" alt="">
+    </div>
+    
+    <script>
+        var preLoader = document.getElementById("loading");
+        setTimeout(()=>{
+            preLoader.style.display = "none";    
+        },3500)
+        preLoader.style.display="flex";
+    </script>
+    <nav id="nav">
+        <div class="back-circle back-circle-1"></div>
+    
+    
+        <ul>
+            <li class="link link-1"><a href="/bazaar/profile"><span>&nbsp; PROFILE &nbsp;&nbsp;</span></a></li>
+            <li class="link link-2"><a href="/bazaar/sell"><span>&nbsp; SELL &nbsp;&nbsp;</span></a></li>
+            <li class="link link-4"><a href="/bazaar/logoutuser/"><span>logout</span></a></li>
+            <li class="link link-3"><a href="/bazaar/news"><span>News</span></a></li>
+    
+        </ul>
+        <div class="back-circle back-circle-2"></div>
+        <div class="back-circle back-circle-3"></div>
+        <div class="nav-btn" id="nav-btn">
+            <div class="nav-bars">
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+            </div>
+    
+        </div>
+    
+    </nav>
+    
+    
+    <div class="wrapper">
+        <header>
+            <h2 class="heading">BUY STOCKS</h2>
+        </header>
+    
+        <main>
+            <section class="username__wrapper ">
+                <button class="username" onclick="window.open('/bazaar/profile')">
+                    <div class="username__flashy"></div>
+                    <span class="username__span">{{request.user}}</span>
+                </button>
+            </section>
+
+            <section class="form__wrapper">
+
+                <form action="/bazaar/buy/" method="POST" class="container form" autocomplete="off">
+                    {% csrf_token %}
+                    <input type="text" class="d-none" name="firm" id="settingbuy">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="select-box">
+                                <div class="options-container">
+
+                                    {% for i in firm|slice:"0:" %}
+                                    <div class="option">
+                                        <input type="radio" class="radio"  name="company" />
+                                        <label>{{i.firm_name}}</label>
+                                    </div>
+                                    {% endfor %}
+                            
+
+                                </div>
+                            
+                                <div class="selected" id="selected">
+                                    Select a Company
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <script>
+                        let x = document.querySelector(".selected");
+                        let settingbuy = document.querySelector("#settingbuy");
+                        setInterval(()=>{
+                            if (x.innerText !== "Select a Company") {
+                                settingbuy.value = x.innerText;
+
+                            }
+                        },700)
+
+                    </script>
+
+
+                    <div class="buy__label">
+                        <p class="monetary__status__caption">Price per stock [Rs]</p>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm">
+                            
+                            <div class="bprice__wrapper ">
+                                
+                                <button class="bprice" disabled>
+                                    <div class="bprice__flashy"></div>
+                                    <span class="bprice__span" id="bprice">_ _ _ _</span>
+                                </button>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <script>
+                        let p = document.getElementById("selected");
+                        let y = document.getElementById("bprice");
+                        setInterval(() => {
+                                if(p.innerText !== "Select a Company"){
+                                axios.get('/bazaar/letsbuy',{
+                                params: {
+                                    "firmName": p.innerText
+                                    }
+                                })
+                                .then(res => {
+                                    y.innerText=res.data;
+
+                                });
+
+                            }
+
+                        },900);
+
+                    </script>
+
+
+                    <div class="buy__label">
+                        <p class="monetary__status__caption">Grand Total [Rs]</p>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm">
+                    
+                            <div class="bprice__wrapper ">
+                    
+                                <button class="bprice" disabled>
+                                    <div class="bprice__flashy"></div>
+                                    <span class="bprice__span" id="gtotal">0</span>
+                                </button>
+                            </div>
+                    
+                        </div>
+                    </div>
+
+
+                    <div id="submitAlert" class="alert alert-danger mt-4 alert-dismissible fade show buy__alert" role="alert">
+                        Number of stocks you've entered <strong>exceeds</strong> your buying capacity.
+                        
+                    </div>
+
+
+                    <div class="row mt-5 buy__input">
+                        <div class="f__group">
+                            <input id="bstock" type="text" name="nstocks" class="f__input" placeholder="Number of Stocks" type="tel" required>
+                            <label for="bstock" class="f__label">Number of Stocks</label>
+                        </div>
+                    </div>
+
+                    <div class="row f__submit" id="submitBtn">
+                        <button class="f__submit__btn " type="submit">Transact</button>
+                        
+                    </div>
+
+
+
+                    
+                    <script>
+                        const submitBtn = document.getElementById("submitBtn");
+                        const submitAlert = document.getElementById("submitAlert");
+
+                        submitAlert.classList.add("d-none");
+
+                        setInterval(() => {
+                            const x = document.getElementById("bprice");
+                            const y = document.getElementById("bstock");
+                            const z = document.getElementById("gtotal");
+                            let c = document.querySelector(".selected")
+
+                            let bprice = parseInt(x.innerText);
+                            let bstock = parseInt(y.value);
+                            let gtotal = parseInt(z.innerText);
+                            gtotal = bprice * bstock;
+                            z.innerText = (isNaN(gtotal) || gtotal < 0) ? 0 : gtotal;
+                            
+
+                            if (c.innerText === "Select a Company") {
+                                submitBtn.classList.add("d-none")
+                                submitAlert.innerHTML = "Please <strong>select</strong> a company for buying stock(s)."
+                                submitAlert.classList.remove("d-none")
+                            }
+                            else {
+
+                                if ((y.value == Math.floor(y.value)) && y.value > 0) {
+                                    let mb=0;
+                                    axios.get("/bazaar/letsbuymb")
+                                    .then(res =>{
+                                        mb=res.data;
+                                        if (gtotal > mb) {
+                                        submitBtn.classList.add("d-none")
+                                        submitAlert.innerHTML = "The grand total <strong>exceeds</strong> your buying capacity :("
+                                        submitAlert.classList.remove("d-none")
+                                        }
+                                        else {
+                                        submitBtn.classList.remove("d-none")
+                                        submitAlert.classList.add("d-none")
+                                        }
+
+                                    });
+
+                                }
+                                else {
+                                    submitBtn.classList.add("d-none")
+                                    submitAlert.innerHTML = "Number of stocks has to be a <strong>positive integer</strong>."
+                                    submitAlert.classList.remove("d-none")
+                                }
+
+                            }
+
+
+
+                        }, 700);
+
+                    </script>
+
+                    
+                </form>
+            </section>
+        </main>
+    </div>
+
+
+
+    <script>
+        const selected = document.querySelector(".selected");
+            const optionsContainer = document.querySelector(".options-container");
+
+            const optionsList = document.querySelectorAll(".option");
+
+            selected.addEventListener("click", () => {
+                optionsContainer.classList.toggle("active");
+            });
+
+            optionsList.forEach(o => {
+                o.addEventListener("click", () => {
+                    selected.innerHTML = o.querySelector("label").innerHTML;
+                    optionsContainer.classList.remove("active");
+                });
+            });
+
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src='{% static "bazaar/js/nav.js" %}'></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+</html>
